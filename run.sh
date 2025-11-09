@@ -13,4 +13,4 @@ docker run -it --rm \
     -e ROS_LOCALHOST_ONLY=0 \
     -e TURTLEBOT3_MODEL=burger \
     camera_rect_img \
-    bash -c "cd /ros2_ws && colcon build --symlink-install && bash"
+
