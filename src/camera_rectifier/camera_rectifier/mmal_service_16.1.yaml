@@ -1,0 +1,29 @@
+image_width: 640    # Update to your camera's actual resolution
+image_height: 480   # Update to your camera's actual resolution
+camera_name: mmal_service_16.1
+frame_id: camera
+# Matrice camera per fisheye
+# Matrice camera (valori tipici per Pi Camera V2)
+camera_matrix:
+  rows: 3
+  cols: 3
+  data: [330.0, 0.0, 320.0, 0.0, 330.0, 240.0, 0.0, 0.0, 1.0]
+
+# Modello plumb_bob per camera standard
+distortion_model: plumb_bob
+
+# Coefficienti di distorsione moderati
+distortion_coefficients:
+  rows: 1
+  cols: 5
+  data: [-0.28, 0.07, 0.0, 0.0, 0.0]
+
+rectification_matrix:
+  rows: 3
+  cols: 3
+  data: [1.0, 0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0, 1.0]
+
+projection_matrix:
+  rows: 3
+  cols: 4
+  data: [330.0, 0.0, 320.0, 0.0, 0.0, 330.0, 240.0, 0.0, 0.0, 0.0, 1.0, 0.0]

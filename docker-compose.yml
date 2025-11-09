@@ -1,0 +1,27 @@
+version: '3.8'
+
+services:
+  ros2_dev:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    image: ros2_humble_base:latest
+    container_name: ros2_dev_workspace
+    
+    volumes:
+      - ./src:/ros2_ws/src
+    
+    environment:
+      - ROS_DOMAIN_ID=30
+      - TURTLEBOT3_MODEL=burger
+    
+    stdin_open: true
+    tty: true
+    
+    working_dir: /ros2_ws
+    
+    command: >
+      bash -c "source /opt/ros/humble/setup.bash &&
+               source /ros2_ws/install/setup.bash 2>/dev/null || true &&
+               colcon build --symlink-install 2>/dev/null || true &&
+               bash"
