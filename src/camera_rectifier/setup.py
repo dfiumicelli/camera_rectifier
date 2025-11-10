@@ -25,7 +25,8 @@ setup(
     entry_points={
         'console_scripts': [
             'camera_rect_node = camera_rectifier.camera_rect_node:main',
-            'camera_rect_node_darkened = camera_rectifier.camera_rect_node_darkened:main'
+            'camera_rect_node_darkened = camera_rectifier.camera_rect_node_darkened:main',
+            'camera_rect_node_debug = camera_rectifier.camera_rect_node_debug:main'
         ],
     },
 )
